@@ -10,7 +10,7 @@ import { Store} from '../../../models/store';
 export class StoreListComponent implements OnInit {
   stores;
   constructor(private storeService: StoreService) { 
-    
+    this.stores = this.getStores();
    }
 
   ngOnInit(
