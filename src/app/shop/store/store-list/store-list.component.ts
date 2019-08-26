@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { StoreService } from 'app/service/store.service'
 @Component({
   selector: 'app-store-list',
   templateUrl: './store-list.component.html',
