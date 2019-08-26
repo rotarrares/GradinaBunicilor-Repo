@@ -1,7 +1,7 @@
 <h2> Produse </h2>
 
 <div class="container">
-  <ul>
+  <ul *ngIf="stores.length > 0">
     <li *ngFor="let store of stores">
       <h4>{{store.name}}</h4>
       <p> Rating: {{store.rating}}</p>

@@ -13,7 +13,9 @@ export class StoreListComponent implements OnInit {
     
    }
 
-  ngOnInit() {
+  ngOnInit(
+  ) {
+    this.stores = this.getStores();
   }
 
   getStores = () => this.storeService.getStores().subscribe(res => this.stores = res);
