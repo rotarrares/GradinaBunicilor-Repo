@@ -28,8 +28,8 @@ import { StoreService } from './service/store.service';
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '', component: StoreComponent },
-      { path: '/shop', component: StoreComponent },
+      { path: '', redirectTo : '/shop',pathMatch: 'full' },
+      { path: 'shop', component: StoreComponent },
       { path: 'products/:productId', component: ProductDetailsComponent},
       { path: 'cart', component: CartComponent },
       { path: 'shipping', component:ShippingComponent },
