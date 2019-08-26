@@ -1,13 +1,24 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Store} from '../models/store';
+import {  AngularFirestoreCollection} from '@angular/fire/firestore';
+
 @Injectable()
 export class StoreService {
-  constructor(private firestore: AngularFirestore) { }
+  constructor(private firestore: AngularFirestore) { 
+     
+  }
+  ngOnInit(){
+  }
   getStores() { 
-      return this.firestore.collection("stores").snapshotChanges();
+      return this.firestore.collection<Store>("stores").snapshotChanges();
     }
   addStore(store: Store){
-    return this.firestore.collection("stores").add(store);
+    return new Promise<any>((resolve, reject) =>{
+        this.firestore
+            .collection("stores")
+            .add(store)
+            .then(res => {}, err => reject(err));
+    });
   }
 }

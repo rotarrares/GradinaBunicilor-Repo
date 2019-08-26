@@ -1,11 +1,18 @@
-<h2> Produse </h2>
+<h2> Producatori </h2>
 
 <div class="container">
-  <ul *ngIf="stores.length > 0">
-    <li *ngFor="let store of stores">
-      <h4>{{store.name}}</h4>
-      <p> Rating: {{store.rating}}</p>
-    </li>
-
+  <ul>
+    <mat-card *ngFor="let store of stores " [attr.data-index]="store.payload.doc.data().id">
+      <mat-card-title-group>
+        <mat-card-title>
+          {{store.payload.doc.data().name}}
+        </mat-card-title>
+        <img src="http://gardenbio.ro/wp-content/uploads/2016/06/Gradina-iunie-2016-6-1-of-1.jpg" mat-card-lg-image>
+        <mat-card-subtitle> 
+          Rating: {{store.payload.doc.data().rating}}
+        </mat-card-subtitle>
+      </mat-card-title-group>
+      
+    </mat-card>
   </ul>
 </div>

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { StoreService } from '../../../service/store.service'
 import { Store} from '../../../models/store';
-
+import { Observable } from 'rxjs';
+import { MatCardModule} from '@angular/material/card'
 @Component({
   selector: 'app-store-list',
   templateUrl: './store-list.component.html',
@@ -12,12 +13,14 @@ export class StoreListComponent implements OnInit {
   constructor(private storeService: StoreService) { 
    }
 
-  ngOnInit(
-  ) {
-    this.stores = this.getStores();
+  ngOnInit() {
+    this.getStores();
+
   }
 
-  getStores = () => this.storeService.getStores().subscribe(res => this.stores = res);
+  getStores = () => this.storeService.getStores().subscribe(
+    res => (this.stores = res));
+  
   
   addStore = (store: Store) => this.storeService.addStore(store);
 }
