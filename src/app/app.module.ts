@@ -10,12 +10,15 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
-import { CartService } from './cart.service';
+import { CartService } from './service/cart.service';
 import { CartComponent } from './cart/cart.component';
 import { ShippingComponent } from './shipping/shipping.component';
 import { environment } from "../environments/environment";
 import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { StoreComponent } from './shop/store/store.component';
+import { StoreListComponent } from './shop/store/store-list/store-list.component';
+import { StoreService } from './service/store.service';
 
 @NgModule({
   imports: [
@@ -25,7 +28,7 @@ import { AngularFirestoreModule } from "@angular/fire/firestore";
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '', component: ProductListComponent },
+      { path: '', component: StoreComponent },
       { path: 'products/:productId', component: ProductDetailsComponent},
       { path: 'cart', component: CartComponent },
       { path: 'shipping', component:ShippingComponent },
@@ -39,10 +42,12 @@ import { AngularFirestoreModule } from "@angular/fire/firestore";
     ProductAlertsComponent,
     ProductDetailsComponent,
     CartComponent,
-    ShippingComponent
+    ShippingComponent,
+    StoreComponent,
+    StoreListComponent
   ],
   bootstrap: [ AppComponent ],
-  providers: [CartService]
+  providers: [CartService, StoreService]
 })
 export class AppModule { }
 
