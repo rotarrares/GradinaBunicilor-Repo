@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StoreService } from '../../../service/store.service'
+import { Store} from '../../../models/store';
+
 @Component({
   selector: 'app-store-list',
   templateUrl: './store-list.component.html',
@@ -16,5 +18,5 @@ export class StoreListComponent implements OnInit {
 
   getStores = () => this.storeService.getStores().subscribe(res => this.stores = res);
   
-
+  addStore = (store: Store) => this.storeService.addStore(store);
 }

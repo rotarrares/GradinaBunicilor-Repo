@@ -1,5 +1,11 @@
 <h2> Produse </h2>
 
 <div class="container">
-  
+  <ul>
+    <li *ngFor="let store of stores">
+      <h4>{{store.name}}</h4>
+      <p> Rating: {{store.rating}}</p>
+    </li>
+
+  </ul>
 </div>
