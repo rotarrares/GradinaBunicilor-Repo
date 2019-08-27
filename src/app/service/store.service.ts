@@ -13,6 +13,10 @@ export class StoreService {
   getStores() { 
       return this.firestore.collection<Store>("stores").snapshotChanges();
     }
+  
+  getStore(path: string) {
+    return this.firestore.doc(path).snapshotChanges();
+  }
   addStore(store: Store){
     return new Promise<any>((resolve, reject) =>{
         this.firestore

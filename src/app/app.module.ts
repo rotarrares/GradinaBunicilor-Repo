@@ -20,6 +20,7 @@ import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { StoreComponent } from './shop/store/store.component';
 import { StoreListComponent } from './shop/store/store-list/store-list.component';
 import { StoreService } from './service/store.service';
+import { StoreDetailsComponent } from './shop/store/store-details/store-details.component';
 
 @NgModule({
   imports: [
@@ -33,6 +34,7 @@ import { StoreService } from './service/store.service';
     RouterModule.forRoot([
       { path: '', redirectTo : '/shop',pathMatch: 'full' },
       { path: 'shop', component: StoreComponent },
+      { path: 'store/:storeId', component: StoreDetailsComponent },
       { path: 'products/:productId', component: ProductDetailsComponent},
       { path: 'cart', component: CartComponent },
       { path: 'shipping', component:ShippingComponent },
@@ -48,7 +50,8 @@ import { StoreService } from './service/store.service';
     CartComponent,
     ShippingComponent,
     StoreComponent,
-    StoreListComponent
+    StoreListComponent,
+    StoreDetailsComponent
   ],
   bootstrap: [ AppComponent ],
   providers: [CartService, StoreService]
