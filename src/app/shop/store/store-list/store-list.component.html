@@ -1,18 +1,18 @@
-<h2> Producatori </h2>
-
-<div class="container">
-  <ul>
-    <mat-card *ngFor="let store of stores " [attr.data-index]="store.payload.doc.data().id">
-      <mat-card-title-group>
-        <mat-card-title>
-          {{store.payload.doc.data().name}}
-        </mat-card-title>
-        <img src="http://gardenbio.ro/wp-content/uploads/2016/06/Gradina-iunie-2016-6-1-of-1.jpg" mat-card-lg-image>
-        <mat-card-subtitle> 
-          Rating: {{store.payload.doc.data().rating}}
-        </mat-card-subtitle>
-      </mat-card-title-group>
-      
-    </mat-card>
-  </ul>
+<h3> Producatori </h3>
+<div class="clearfix"></div>
+<div class="row">
+  <div class="card-container col-lg-4 col-md-4 col-sm-offset-2 col-sm-8 col-xs-12" *ngFor="let store of stores " [attr.data-index]="store.payload.doc.data().id">
+      <div class="card">
+        <img src="{{store.payload.doc.data().image}}" class="card-img"/>
+        <div class="card-text">
+          <h4> {{store.payload.doc.data().name}}</h4>
+          <ng-template #t let-fill="fill">
+            <span class="star" [class.full]="fill === 100">
+              <span class="half" [style.width.%]="fill">&#9787;</span>&#9786;
+            </span>
+          </ng-template>
+          <ngb-rating class="card-text-bottom" [(rate)]="store.payload.doc.data().rating" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
+        </div>
+      </div>
+  </div>
 </div>

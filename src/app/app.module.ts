@@ -1,6 +1,7 @@
 
 import { MatCardModule} from '@angular/material/card'
 import { NgModule } from '@angular/core';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
@@ -26,6 +27,7 @@ import { StoreService } from './service/store.service';
     AngularFirestoreModule,
     BrowserModule,
     MatCardModule,
+    NgbModule,
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
