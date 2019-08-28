@@ -2,10 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { StoreService } from '../../../service/store.service'
 import { Store} from '../../../models/store';
 import { Observable } from 'rxjs';
-import { MatCardModule} from '@angular/material/card';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatRippleModule} from '@angular/material/core';
+
 @Component({
   selector: 'app-store-list',
   templateUrl: './store-list.component.html',

@@ -12,6 +12,10 @@
   margin:20px 0px;
 }
 
+.card-container a:hover{
+  text-decoration:none;
+}
+
 .star {
   position: relative;
   display: inline-block;

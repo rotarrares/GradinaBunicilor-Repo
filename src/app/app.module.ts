@@ -24,6 +24,7 @@ import { StoreDetailsComponent } from './shop/store/store-details/store-details.
 import {MatDividerModule} from '@angular/material/divider';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatRippleModule} from '@angular/material/core';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import {MatRippleModule} from '@angular/material/core';
     BrowserModule,
     MatCardModule,
     MatDividerModule,
+    MatTooltipModule,
     MatToolbarModule,
     MatRippleModule,
     NgbModule,
@@ -41,7 +43,7 @@ import {MatRippleModule} from '@angular/material/core';
     RouterModule.forRoot([
       { path: '', redirectTo : '/shop',pathMatch: 'full' },
       { path: 'shop', component: StoreComponent },
-      { path: 'store/:storeId', component: StoreDetailsComponent },
+      { path: 'shop/:storeId', component: StoreDetailsComponent },
       { path: 'products/:productId', component: ProductDetailsComponent},
       { path: 'cart', component: CartComponent },
       { path: 'shipping', component:ShippingComponent },
@@ -50,7 +52,6 @@ import {MatRippleModule} from '@angular/material/core';
   ],
   declarations: [
     AppComponent,
-    
     TopBarComponent,
     ProductListComponent,
     ProductAlertsComponent,
