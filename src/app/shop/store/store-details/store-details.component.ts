@@ -16,7 +16,8 @@ export class StoreDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      this.store = this.storeService.getStore(params.get('productId'));
+      this.storeService.getStore(params.get('storeId')).subscribe(
+      res => (this.store = res));
     });
   }
 
