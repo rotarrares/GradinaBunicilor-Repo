@@ -1,22 +1,23 @@
 <div class="container">
   <div>
-  <h3> Producatori </h3>
-  <div class="clearfix"></div>
-  <div class="row">
-    <div class="card-container col-lg-4 col-md-6  col-sm-8 col-xs-12" *ngFor="let store of stores " [attr.data-index]="store.payload.doc.id">
-        <a class="card" [title]="store.payload.doc.data().name" [routerLink]="['/store', store.payload.doc.id]">
-          <img src="{{store.payload.doc.data().image}}" class="card-img"/>
-          <div class="card-text">
-            <h4> {{store.payload.doc.data().name}}</h4>
+    <mat-toolbar><h3> Producatori </h3></mat-toolbar>    
+    <div class="row">
+      <div class="card-container col-lg-4 col-md-6 col-sm-push-2  col-sm-offset-2 col-sm-8 col-xs-12" *ngFor="let store of stores " [attr.data-index]="store.payload.doc.id">
+          <mat-card class="card" [title]="store.payload.doc.data().name">
+            <a matRipple [routerLink]="['/store', store.payload.doc.id]"><img mat-card-image src="{{store.payload.doc.data().image}}"  />
+            <mat-card-title >
+              <h4> {{store.payload.doc.data().name}}</h4>
+            </mat-card-title>
+            </a>
+            <mat-divider [inset]="true"></mat-divider>
             <ng-template #t let-fill="fill">
-              <span class="star" [class.full]="fill === 100">
-                <span class="half" [style.width.%]="fill">&#9787;</span>&#9786;
-              </span>
-            </ng-template>
-            <ngb-rating class="card-text-bottom" [(rate)]="store.payload.doc.data().rating" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
-          </div>
-        </a>
+                <span class="star" [class.full]="fill === 100">
+                  <span class="half" [style.width.%]="fill"><i class="material-icons color-primary">emoji_emotions</i></span><i class="color-secondary material-icons">mood</i>
+                </span>
+              </ng-template>
+            <mat-card-actions><ngb-rating [(rate)]="store.payload.doc.data().rating" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating></mat-card-actions>
+          </mat-card>
+      </div>
     </div>
-  </div>
   </div>
 </div>

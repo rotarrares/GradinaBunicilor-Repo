@@ -1,13 +1,6 @@
 .card {
-  position:relative;
-  display:inline-block;
   border-radius: 15px;
-  box-shadow: 0 2px 1px -1px rgba(0,0,0,0.4), 
-                0 1px 1px 0 rgba(0,0,0,0.4), 
-                0 1px 3px 0 rgba(0,0,0,0.4);
   overflow:hidden;
-  height:200px;
-  width:100%;
 }
 
 .card:hover {
@@ -17,28 +10,6 @@
 }
 .card-container{
   margin:20px 0px;
-}
-.card-text{
-  position:absolute;
-  top: 0px;
-  text-align: center;
-  right: 0px;
-  background-color:rgba(255, 255, 255,0.7);
-  height:100%;
-  padding:0px 30px;
-  max-width: 200px;
-  border-left-style: solid;
-  border-left-color:rgb(194, 194, 194);
-  border-left-width:1px;
-}
-.card-text-bottom{
-  bottom:0px;
-  right:0px;
-  position:absolute;
-  top:initial;
-}
-.card-img{
-  width:100%;
 }
 
 .star {

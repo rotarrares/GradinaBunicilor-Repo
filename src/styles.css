@@ -8,6 +8,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+.color-primary{
+  color:rgb(248, 214, 60);
+}
+
+.color-secondary{
+  color: rgb(172, 226, 45);
+}
+
 body {
   margin: 0;
 }

@@ -21,6 +21,10 @@ import { StoreComponent } from './shop/store/store.component';
 import { StoreListComponent } from './shop/store/store-list/store-list.component';
 import { StoreService } from './service/store.service';
 import { StoreDetailsComponent } from './shop/store/store-details/store-details.component';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatRippleModule} from '@angular/material/core';
+
 
 @NgModule({
   imports: [
@@ -28,6 +32,9 @@ import { StoreDetailsComponent } from './shop/store/store-details/store-details.
     AngularFirestoreModule,
     BrowserModule,
     MatCardModule,
+    MatDividerModule,
+    MatToolbarModule,
+    MatRippleModule,
     NgbModule,
     HttpClientModule,
     ReactiveFormsModule,
@@ -43,6 +50,7 @@ import { StoreDetailsComponent } from './shop/store/store-details/store-details.
   ],
   declarations: [
     AppComponent,
+    
     TopBarComponent,
     ProductListComponent,
     ProductAlertsComponent,
