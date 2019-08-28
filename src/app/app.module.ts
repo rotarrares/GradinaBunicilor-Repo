@@ -25,7 +25,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatRippleModule} from '@angular/material/core';
 import {MatTooltipModule} from '@angular/material/tooltip';
-
+import {StoreModule} from './shop/store/store.module';
 
 @NgModule({
   imports: [
@@ -35,6 +35,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatCardModule,
     MatDividerModule,
     MatTooltipModule,
+    StoreModule,
     MatToolbarModule,
     MatRippleModule,
     NgbModule,
@@ -42,8 +43,6 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', redirectTo : '/shop',pathMatch: 'full' },
-      { path: 'shop', component: StoreComponent },
-      { path: 'shop/:storeId', component: StoreDetailsComponent },
       { path: 'products/:productId', component: ProductDetailsComponent},
       { path: 'cart', component: CartComponent },
       { path: 'shipping', component:ShippingComponent },
