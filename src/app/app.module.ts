@@ -1,5 +1,5 @@
 
-import { MatCardModule} from '@angular/material/card'
+
 import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
@@ -21,10 +21,7 @@ import { StoreComponent } from './shop/store/store.component';
 import { StoreListComponent } from './shop/store/store-list/store-list.component';
 import { StoreService } from './service/store.service';
 import { StoreDetailsComponent } from './shop/store/store-details/store-details.component';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatRippleModule} from '@angular/material/core';
-import {MatTooltipModule} from '@angular/material/tooltip';
+
 import {StoreModule} from './shop/store/store.module';
 
 @NgModule({
@@ -32,12 +29,7 @@ import {StoreModule} from './shop/store/store.module';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     BrowserModule,
-    MatCardModule,
-    MatDividerModule,
-    MatTooltipModule,
     StoreModule,
-    MatToolbarModule,
-    MatRippleModule,
     NgbModule,
     HttpClientModule,
     ReactiveFormsModule,
@@ -57,9 +49,6 @@ import {StoreModule} from './shop/store/store.module';
     ProductDetailsComponent,
     CartComponent,
     ShippingComponent,
-    StoreComponent,
-    StoreListComponent,
-    StoreDetailsComponent
   ],
   bootstrap: [ AppComponent ],
   providers: [CartService, StoreService]
