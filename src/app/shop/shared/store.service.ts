@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore,AngularFirestoreCollection,AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Store} from '../models/store';
-import {  AngularFirestoreCollection} from '@angular/fire/firestore';
 
 @Injectable()
 export class StoreService {
+  store;
   constructor(private firestore: AngularFirestore) { 
      
   }
@@ -15,7 +15,7 @@ export class StoreService {
     }
   
   getStore(path: string) {
-    return this.firestore.collection<Store>("stores").doc(path).snapshotChanges();
+    return this.firestore.doc("stores/" + path).valueChanges();
   }
   
   addStore(store: Store){

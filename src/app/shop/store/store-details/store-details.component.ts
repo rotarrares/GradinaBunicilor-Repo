@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {StoreService} from '../../../service/store.service'
+import {StoreService} from '../../shared/store.service'
 
 @Component({
   selector: 'app-store-details',
@@ -21,8 +21,7 @@ export class StoreDetailsComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       this.id = params.get('shopId');  
     });
-    this.storeService.getStore(this.id).subscribe(
-      res => (this.store = res.payload.data()));
+    this.store = this.storeService.getStore(this.id);
   }
 
 }

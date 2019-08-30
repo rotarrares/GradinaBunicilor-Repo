@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { Routes} from '@angular/router';
-import { StoreService } from '../../service/store.service'
+import { StoreService } from '../shared/store.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { StoreComponent} from './store.component';
 import { RouterModule } from '@angular/router';
@@ -17,6 +17,8 @@ import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { environment } from "../../../environments/environment";
 import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { AngularFireAuth } from '@angular/fire/auth';
+import { TopBarComponent } from './top-bar/top-bar.component';
 
  const routes: Routes = [{
     path: 'shop',
@@ -46,11 +48,12 @@ import { AngularFirestoreModule } from "@angular/fire/firestore";
     MatCardModule,
     MatRippleModule,],
   declarations: [
+    TopBarComponent,
     StoreComponent,
     StoreListComponent,
     StoreDetailsComponent
     ],
   exports: [RouterModule],
-  providers: [StoreService],
+  providers: [StoreService,AngularFireAuth],
 })
 export class StoreModule{};

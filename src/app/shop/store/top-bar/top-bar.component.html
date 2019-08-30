@@ -1,0 +1,17 @@
+<a [routerLink]="['/']">
+  <h1>My Store</h1>
+</a>
+
+<div *ngIf="afAuth.user | async as user; else showLogin">
+      <h1>Hello {{ user.displayName }}!</h1>
+      <button (click)="logout()">Logout</button>
+    </div>
+    <ng-template #showLogin>
+      <p>Please login.</p>
+      <button (click)="login()">Login with Google</button>
+    </ng-template>
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
