@@ -16,7 +16,9 @@
 .color-secondary{
   color: rgb(107, 107, 107);
 }
-
+.color-white{
+  color: #ffffff;
+}
 body {
   margin: 0;
 }

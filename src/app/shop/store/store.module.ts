@@ -12,6 +12,7 @@ import { MatDividerModule} from '@angular/material/divider';
 import { MatToolbarModule} from '@angular/material/toolbar';
 import { MatRippleModule} from '@angular/material/core';
 import { MatTooltipModule} from '@angular/material/tooltip';
+import { MatButtonModule} from '@angular/material/button'
 import { MatCardModule} from '@angular/material/card';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { environment } from "../../../environments/environment";
@@ -19,6 +20,8 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { AngularFireAuth } from '@angular/fire/auth';
 import { TopBarComponent } from './top-bar/top-bar.component';
+import { FormsModule } from '@angular/forms';
+import { AuthComponent } from './auth/auth.component';
 
  const routes: Routes = [{
     path: 'shop',
@@ -37,6 +40,8 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 @NgModule({
   imports: [CommonModule,
     BrowserModule,
+    FormsModule,
+    MatButtonModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     ReactiveFormsModule,
@@ -51,7 +56,8 @@ import { TopBarComponent } from './top-bar/top-bar.component';
     TopBarComponent,
     StoreComponent,
     StoreListComponent,
-    StoreDetailsComponent
+    StoreDetailsComponent,
+    AuthComponent
     ],
   exports: [RouterModule],
   providers: [StoreService,AngularFireAuth],

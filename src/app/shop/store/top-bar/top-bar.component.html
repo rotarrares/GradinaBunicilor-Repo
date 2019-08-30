@@ -1,15 +1,10 @@
 <a [routerLink]="['/']">
-  <h1>My Store</h1>
+  <h1>Comanda</h1>
 </a>
+<app-auth></app-auth>
 
-<div *ngIf="afAuth.user | async as user; else showLogin">
-      <h1>Hello {{ user.displayName }}!</h1>
-      <button (click)="logout()">Logout</button>
-    </div>
-    <ng-template #showLogin>
-      <p>Please login.</p>
-      <button (click)="login()">Login with Google</button>
-    </ng-template>
+
+
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
