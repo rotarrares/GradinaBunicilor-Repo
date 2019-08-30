@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal, ModalDismissReasons, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
@@ -11,40 +11,27 @@ import {MatButtonModule} from '@angular/material/button'
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent implements OnInit {
-  closeResult: string;
   user;
+  modal;
   constructor(private modalService: NgbModal,
   public afAuth: AngularFireAuth,
-  ) {}
-
-  login() {
+  ) {
     this.afAuth.auth.onAuthStateChanged(function(user) {
     if (user) {
-      this.modal.close("Succesfully Logged in");
+      console.log("User Authentificated");
+      this.modal.close();
     }
-});
-    this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+    });
+  }
 
+  login() {
+    this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
   }
   logout() {
     this.afAuth.auth.signOut();
   }
   open(content) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
-  }
-
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return  `with: ${reason}`;
-    }
+    this.modal = this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'});
   }
 
   ngOnInit() {

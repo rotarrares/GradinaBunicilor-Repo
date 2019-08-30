@@ -1,15 +1,15 @@
 <!--Authentificate Button-->
 <div *ngIf="afAuth.user | async as user; else showLogin">
-  <span class="username color-white" >Hello {{ user.displayName }}!</span>
+  <span class="username color-white" >Hello {{ user.displayName }}!</span><button  class="color-white" (click)="logout()">Delogare</button>
 </div>
 <ng-template #showLogin>
-  <button mat-button color="accent" class="btn btn-lg btn-outline-primary color-white" (click)="open(content)">Autentificare</button>
+  <button  class="btn btn-lg btn-outline-primary color-white" (click)="open(content)">Autentificare</button>
 </ng-template>
 
-<ng-template #content let-modal>
+<ng-template #content let-d="dismiss">
   <div class="modal-header">
     <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
-    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+    <button type="button" class="close" aria-label="Close" (click) = "d('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
