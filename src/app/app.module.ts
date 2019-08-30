@@ -5,6 +5,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
@@ -17,10 +18,6 @@ import { ShippingComponent } from './shipping/shipping.component';
 import { environment } from "../environments/environment";
 import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
-import { StoreComponent } from './shop/store/store.component';
-import { StoreListComponent } from './shop/store/store-list/store-list.component';
-import { StoreService } from './service/store.service';
-import { StoreDetailsComponent } from './shop/store/store-details/store-details.component';
 
 import {StoreModule} from './shop/store/store.module';
 
@@ -29,6 +26,7 @@ import {StoreModule} from './shop/store/store.module';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     BrowserModule,
+    BrowserAnimationsModule,
     StoreModule,
     NgbModule,
     HttpClientModule,
@@ -51,7 +49,7 @@ import {StoreModule} from './shop/store/store.module';
     ShippingComponent,
   ],
   bootstrap: [ AppComponent ],
-  providers: [CartService, StoreService]
+  providers: [CartService]
 })
 export class AppModule { }
 

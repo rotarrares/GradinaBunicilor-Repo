@@ -10,8 +10,6 @@ import { Observable } from 'rxjs';
 })
 export class StoreListComponent implements OnInit {
   stores;
-  
-  currentRate = 3.4;
   constructor(private storeService: StoreService) { 
    }
 
