@@ -9,19 +9,20 @@ import {StoreService} from '../../../service/store.service'
 })
 export class StoreDetailsComponent implements OnInit {
   store ;
+  id:string;
   constructor(
     private route:ActivatedRoute,
     private storeService:StoreService,
   ) { 
-    this.route.paramMap.subscribe(params => {
-      this.storeService.getStore(params.get('shopId')).subscribe(
-      res => (this.store = res.payload.data()));
-      
-    });
+    
   }
 
   ngOnInit() {
-    
+    this.route.paramMap.subscribe(params => {
+      this.id = params.get('shopId');  
+    });
+    this.storeService.getStore(this.id).subscribe(
+      res => (this.store = res.payload.data()));
   }
 
 }
