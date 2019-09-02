@@ -12,7 +12,9 @@ import { MatDividerModule} from '@angular/material/divider';
 import { MatToolbarModule} from '@angular/material/toolbar';
 import { MatRippleModule} from '@angular/material/core';
 import { MatTooltipModule} from '@angular/material/tooltip';
+import { MatExpansionModule} from '@angular/material/expansion';
 import { MatButtonModule} from '@angular/material/button'
+import { MatAccordion} from '@angular/material';
 import { MatCardModule} from '@angular/material/card';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { environment } from "../../../environments/environment";
@@ -42,6 +44,7 @@ import { AuthComponent } from './auth/auth.component';
     BrowserModule,
     FormsModule,
     MatButtonModule,
+    MatExpansionModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     ReactiveFormsModule,

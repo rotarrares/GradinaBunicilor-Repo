@@ -12,10 +12,13 @@
   margin:20px 0px;
 }
 
+
 .card-container a:hover{
   text-decoration:none;
 }
-
+.mat-card-subtitle{
+  height:120px;
+}
 .star {
   position: relative;
   display: inline-block;

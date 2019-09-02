@@ -1,6 +1,6 @@
 <!--Authentificate Button-->
 <div *ngIf="afAuth.user | async as user; else showLogin">
-  <span class="username color-white" >Hello {{ user.displayName }}!</span><button  class="color-white" (click)="logout()">Delogare</button>
+  <span class="username color-white" >Salutari {{ user.displayName }}</span><button  class="color-white" (click)="logout()">Delogare</button>
 </div>
 <ng-template #showLogin>
   <button  class="btn btn-lg btn-outline-primary color-white" (click)="open(content)">Autentificare</button>

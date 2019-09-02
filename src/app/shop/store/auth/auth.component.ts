@@ -12,6 +12,7 @@ import {MatButtonModule} from '@angular/material/button'
 })
 export class AuthComponent implements OnInit {
   user;
+  
   modal;
   constructor(private modalService: NgbModal,
   public afAuth: AngularFireAuth,
