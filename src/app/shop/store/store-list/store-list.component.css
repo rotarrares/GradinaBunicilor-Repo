@@ -13,7 +13,9 @@
   margin:20px 0px;
 }
 
-
+mat-panel-title {
+  font-weight:bold;
+}
 .card-container a:hover{
   text-decoration:none;
 }
