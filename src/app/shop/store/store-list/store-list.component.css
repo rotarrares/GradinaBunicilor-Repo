@@ -1,6 +1,7 @@
 .card {
-  border-radius: 15px;
+  border-radius: 10px;
   overflow:hidden;
+  padding:0px;
 }
 
 .card:hover {
@@ -16,9 +17,7 @@
 .card-container a:hover{
   text-decoration:none;
 }
-.mat-card-subtitle{
-  height:120px;
-}
+
 .star {
   position: relative;
   display: inline-block;
@@ -34,6 +33,10 @@
   overflow: hidden;
   color: rgb(255, 252, 73);
 
+}
+
+ngb-rating{
+  margin-left:15px;
 }
 
 .sr-only {

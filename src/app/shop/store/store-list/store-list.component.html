@@ -7,25 +7,42 @@
               <a matRipple [routerLink]="['/shop', store.payload.doc.id]">
                 <img mat-card-image src="{{store.payload.doc.data().image}}"  />
                 <mat-card-title >
-                  <h4> {{(store.payload.doc.data().name)}}</h4>
+                  <h4 class="text-center"> {{(store.payload.doc.data().name)}}</h4>
                 </mat-card-title>     
               </a>
-                  <mat-card-subtitle>
+                <mat-card-subtitle>
+                  <mat-accordion>
                     <mat-expansion-panel>
                       <mat-expansion-panel-header>
                         <mat-panel-title>
-                          Details
+                          Detalii
                         </mat-panel-title>
                         <mat-panel-description>
                           
                         </mat-panel-description>
-                        {{store.payload.doc.data().details}}
+                        
                       </mat-expansion-panel-header>
-
+                      <a matRipple [routerLink]="['/shop', store.payload.doc.id]">
+                      <p>{{store.payload.doc.data().details}}</p>
+                      </a>
                     </mat-expansion-panel>
-                    <p>{{store.payload.doc.data().details}}</p>
-                  </mat-card-subtitle>
-                </div>
+                    <mat-expansion-panel>
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                          Adresa
+                        </mat-panel-title>
+                        <mat-panel-description>
+                          
+                        </mat-panel-description>
+                        
+                      </mat-expansion-panel-header>
+                      
+                        <div style="width: 100%"><iframe width="100%" height="200" src="https://maps.google.com/maps?width=100%&amp;height=200&amp;hl=en&amp;coord={{store.payload.doc.data().location.latitude}},{{store.payload.doc.data().location.longitude}}&amp;q=+(My%20Business%20Name)&amp;ie=UTF8&amp;t=k&amp;z=12&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/coordinates.html">find my coordinates</a></iframe></div><br />
+                     
+                    </mat-expansion-panel>
+                  </mat-accordion>
+                </mat-card-subtitle>
+                
                 <mat-divider [inset]="true"></mat-divider>
                 
               
