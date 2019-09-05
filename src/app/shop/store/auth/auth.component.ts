@@ -3,7 +3,8 @@ import {NgbModal, ModalDismissReasons, NgbModalRef} from '@ng-bootstrap/ng-boots
 import { FormsModule } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
-import {MatButtonModule} from '@angular/material/button'
+import {MatButtonModule} from '@angular/material/button';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-auth',
@@ -12,6 +13,7 @@ import {MatButtonModule} from '@angular/material/button'
 })
 export class AuthComponent implements OnInit {
   user;
+  faCoffee = faCoffee;
   modal:NgbModalRef;
   constructor(private modalService: NgbModal,
   public afAuth: AngularFireAuth,
@@ -25,11 +27,7 @@ export class AuthComponent implements OnInit {
     });
   }
 
-  closeModal(){
-    this.modal.dismiss("");
-  }
-
-  login() {
+  googleLogin() {
     this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
   }
   logout() {

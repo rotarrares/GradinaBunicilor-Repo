@@ -4,7 +4,9 @@
   padding:0px;
 }
 
-.mat-card-image{
+.image-container{
+  max-height:200px;
+  overflow:hidden;
   
 }
 
@@ -19,8 +21,14 @@ agm-map {
                 0 2px 2px 0 rgba(0,0,0,0.6), 
                 0 2px 4px 0 rgba(0,0,0,0.6);
 }
+
 .card-container{
   margin:20px 0px;
+}
+
+h4{
+  margin-top:16px;
+  margin-bottom: 10px;
 }
 
 mat-panel-title {

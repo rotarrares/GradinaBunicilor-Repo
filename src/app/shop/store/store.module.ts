@@ -25,9 +25,13 @@ import { MatExpansionModule} from '@angular/material/expansion';
 import { MatButtonModule} from '@angular/material/button'
 import { MatAccordion} from '@angular/material';
 import { MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
 
 import { AgmCoreModule } from '@agm/core';
 import {MapsAPILoader} from '@agm/core';
+
+
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
  const routes: Routes = [{
     path: 'shop',
@@ -55,8 +59,10 @@ import {MapsAPILoader} from '@agm/core';
     NgbModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
+    FontAwesomeModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
+    MatIconModule,
     MatDividerModule,
     MatTooltipModule,
     MatToolbarModule,

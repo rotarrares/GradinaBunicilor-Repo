@@ -4,6 +4,7 @@ import { Store} from '../../../models/store';
 import { Observable } from 'rxjs';
 import { AgmCoreModule } from '@agm/core';
 
+
 @Component({
   selector: 'app-store-list',
   templateUrl: './store-list.component.html',
