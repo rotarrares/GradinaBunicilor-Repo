@@ -8,6 +8,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.map-inside .mat-expansion-panel-body{
+  padding:0 0px 0px;
+}
 
 .color-primary{
   color:rgb(248, 214, 60);

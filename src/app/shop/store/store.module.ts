@@ -24,6 +24,9 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { FormsModule } from '@angular/forms';
 import { AuthComponent } from './auth/auth.component';
+import { AgmCoreModule } from '@agm/core';
+
+import {MapsAPILoader} from '@agm/core';
 
  const routes: Routes = [{
     path: 'shop',
@@ -42,7 +45,11 @@ import { AuthComponent } from './auth/auth.component';
 @NgModule({
   imports: [CommonModule,
     BrowserModule,
+    
     FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBsZF4S79MWila_qTrBQ1P9Qti1LrGIL9Q'
+    }),
     MatButtonModule,
     MatExpansionModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
