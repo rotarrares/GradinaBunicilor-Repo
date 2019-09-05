@@ -1,70 +1,79 @@
 
     <mat-toolbar><h3> Producatori </h3></mat-toolbar>    
     <div class="row">
-        <div class="card-container col-lg-4 col-md-4 col-sm-6 col-xs-12" *ngFor="let store of stores " >
-            <mat-card class="card"  [attr.data-index]="store.payload.doc.id">
-              
-              <a matRipple [routerLink]="['/shop', store.payload.doc.id]">
-                <img mat-card-image src="{{store.payload.doc.data().image}}"  />
-                <mat-card-title >
-                  <h4 class="text-center"> {{(store.payload.doc.data().name)}}</h4>
-                </mat-card-title>     
-              </a>
-                <mat-card-subtitle>
-                  <mat-accordion>
-                    <mat-expansion-panel>
-                      <mat-expansion-panel-header>
-                        <mat-panel-title>
-                          Detalii
-                        </mat-panel-title>
-                        <mat-panel-description>
-                          
-                        </mat-panel-description>
-                      
-                      </mat-expansion-panel-header>
-                      <a matRipple [routerLink]="['/shop', store.payload.doc.id]">
-                      <p>{{store.payload.doc.data().details}}</p>
-                      </a>
-                    </mat-expansion-panel>
+        <div class="card-container col-lg-4 col-md-6 col-sm-12 col-xs-12" *ngFor="let store of stores; let i = index " [attr.data-index]="i" >
+            
+              <mat-card class="card"  [attr.data-index]="store.payload.doc.id" (mouseleave)="closePanel()"(mouseenter)="openPanel(i)">
+                
+                <a matRipple [routerLink]="['/shop', store.payload.doc.id]">
+                  <div class="image-container">
+                    <img mat-card-image src="{{store.payload.doc.data().image}}"  />
+                  </div>
+                  <mat-card-title >
                     
-                    <mat-expansion-panel class="map-inside">
-                      <mat-expansion-panel-header>
-                        <mat-panel-title>
-                          Adresa
-                        </mat-panel-title>
-                        <mat-panel-description>
-                        </mat-panel-description>
-                      </mat-expansion-panel-header>
-                      <ng-template matExpansionPanelContent>
-                        <agm-map 
-                        [latitude]=store.payload.doc.data().location.latitude 
-                        [longitude]=store.payload.doc.data().location.longitude>
-                          <agm-marker 
-                          [latitude]=store.payload.doc.data().location.latitude 
-                          [longitude]=store.payload.doc.data().location.longitude>
-                          <agm-info-window>
-                            <strong>Fa-ne o vizita!</strong>
-                          </agm-info-window>
-                          </agm-marker>
-                        </agm-map>  
-                      </ng-template>
+                    <h4 class="text-center"> {{(store.payload.doc.data().name)}}</h4>
+                  </mat-card-title>     
+                </a>
+                  <mat-card-subtitle>
+                    <mat-accordion>
+                      <mat-expansion-panel [expanded]="i == indexExpanded">
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>
+                            Detalii
+                          </mat-panel-title>
+                          <mat-panel-description>
+                            
+                          </mat-panel-description>
+                        
+                        </mat-expansion-panel-header>
+                        <a matRipple [routerLink]="['/shop', store.payload.doc.id]">
+                        <p>{{store.payload.doc.data().details}}</p>
+                        </a>
+                      </mat-expansion-panel>
                       
-                    </mat-expansion-panel>
-                  </mat-accordion>
-                </mat-card-subtitle>
+                      <mat-expansion-panel class="map-inside">
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>
+                            Locatie
+                          </mat-panel-title>
+                          <mat-panel-description>
+                            {{store.payload.doc.data().address}}
+                          </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <ng-template matExpansionPanelContent>
+                          <agm-map 
+                          [latitude]=store.payload.doc.data().location.latitude 
+                          [longitude]=store.payload.doc.data().location.longitude
+                          [mapTypeControl]="true"
+                          [controlSize]="23"
+                          [zoom]="11">
+                            <agm-marker 
+                            [latitude]=store.payload.doc.data().location.latitude 
+                            [longitude]=store.payload.doc.data().location.longitude>
+                            <agm-info-window>
+                              <strong>Fa-ne o vizita!</strong>
+                            </agm-info-window>
+                            </agm-marker>
+                          </agm-map>  
+                        </ng-template>
+                        
+                      </mat-expansion-panel>
+                    </mat-accordion>
+                  </mat-card-subtitle>
+                  
+                  
+                  
                 
-                
-                
-              
-              <ng-template #t let-fill="fill">
-                <span class="star" [class.full]="fill === 100">
-                  <span class="half" [style.width.%]="fill"><i class="material-icons color-primary">emoji_emotions</i></span><i class="color-secondary material-icons">mood</i>
-                </span>
-              </ng-template>
-              <mat-card-actions>
-                <ngb-rating matTooltip="{{store.payload.doc.data().rating}}" [(rate)]="store.payload.doc.data().rating" aria-label="store.payload.doc.data().rating" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
-              </mat-card-actions>
-            </mat-card>
-      </div>
+                <ng-template #t let-fill="fill">
+                  <span class="star" [class.full]="fill === 100">
+                    <span class="half" [style.width.%]="fill"><i class="material-icons color-primary">emoji_emotions</i></span><i class="color-secondary material-icons">mood</i>
+                  </span>
+                </ng-template>
+                <mat-card-actions>
+                  <ngb-rating matTooltip="{{store.payload.doc.data().rating}}" [(rate)]="store.payload.doc.data().rating" aria-label="store.payload.doc.data().rating" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
+                </mat-card-actions>
+              </mat-card>
+            
+        </div>
       
-    </div>
+      </div>

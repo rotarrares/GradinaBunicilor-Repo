@@ -3,7 +3,7 @@
   <span class="username color-white" >Salutari {{ user.displayName }}</span><button  class="color-white" (click)="logout()">Delogare</button>
 </div>
 <ng-template #showLogin>
-  <button  class="btn btn-lg btn-outline-primary color-white" (click)="open(content)">Autentificare</button>
+  <button mat-raised-button class="btn btn-lg btn-outline-primary color-white" (click)="open(content)">Autentificare</button>
 </ng-template>
 
 <ng-template #content let-d="dismiss">

@@ -12,17 +12,21 @@ import {MatButtonModule} from '@angular/material/button'
 })
 export class AuthComponent implements OnInit {
   user;
-  
-  modal;
+  modal:NgbModalRef;
   constructor(private modalService: NgbModal,
   public afAuth: AngularFireAuth,
   ) {
     this.afAuth.auth.onAuthStateChanged(function(user) {
     if (user) {
       console.log("User Authentificated");
-      this.modal.close();
+      modalService: NgbModal;
+      modalService.dismissAll();
     }
     });
+  }
+
+  closeModal(){
+    this.modal.dismiss("");
   }
 
   login() {
@@ -33,6 +37,9 @@ export class AuthComponent implements OnInit {
   }
   open(content) {
     this.modal = this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'});
+    if(this.modal){
+      console.log(this.modal);
+    }
   }
 
   ngOnInit() {

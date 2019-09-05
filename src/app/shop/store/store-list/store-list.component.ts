@@ -11,12 +11,22 @@ import { AgmCoreModule } from '@agm/core';
 })
 export class StoreListComponent implements OnInit {
   stores;
+
+  indexExpanded = -1;
   constructor(private storeService: StoreService) { 
    }
 
   ngOnInit() {
     this.getStores();
 
+  }
+  openPanel(index: number) {
+    if(this.indexExpanded != index)
+    this.indexExpanded = index;
+  }
+  closePanel(index: number) {
+    if(this.indexExpanded != index)
+    this.indexExpanded = index;
   }
 
   getStores = () => this.storeService.getStores().subscribe(

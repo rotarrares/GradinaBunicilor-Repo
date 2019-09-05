@@ -8,14 +8,6 @@ import { StoreComponent} from './store.component';
 import { RouterModule } from '@angular/router';
 import { StoreListComponent} from './store-list/store-list.component';
 import { StoreDetailsComponent} from './store-details/store-details.component';
-import { MatDividerModule} from '@angular/material/divider';
-import { MatToolbarModule} from '@angular/material/toolbar';
-import { MatRippleModule} from '@angular/material/core';
-import { MatTooltipModule} from '@angular/material/tooltip';
-import { MatExpansionModule} from '@angular/material/expansion';
-import { MatButtonModule} from '@angular/material/button'
-import { MatAccordion} from '@angular/material';
-import { MatCardModule} from '@angular/material/card';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { environment } from "../../../environments/environment";
 import { AngularFireModule } from "@angular/fire";
@@ -24,8 +16,17 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { FormsModule } from '@angular/forms';
 import { AuthComponent } from './auth/auth.component';
-import { AgmCoreModule } from '@agm/core';
 
+import { MatDividerModule} from '@angular/material/divider';
+import { MatToolbarModule} from '@angular/material/toolbar';
+import { MatRippleModule} from '@angular/material/core';
+import { MatTooltipModule} from '@angular/material/tooltip';
+import { MatExpansionModule} from '@angular/material/expansion';
+import { MatButtonModule} from '@angular/material/button'
+import { MatAccordion} from '@angular/material';
+import { MatCardModule} from '@angular/material/card';
+
+import { AgmCoreModule } from '@agm/core';
 import {MapsAPILoader} from '@agm/core';
 
  const routes: Routes = [{
@@ -48,10 +49,10 @@ import {MapsAPILoader} from '@agm/core';
     
     FormsModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBsZF4S79MWila_qTrBQ1P9Qti1LrGIL9Q'
+      apiKey: 'AIzaSyBsZF4S79MWila_qTrBQ1P9Qti1LrGIL9Q',
+      libraries: ['places'],
     }),
-    MatButtonModule,
-    MatExpansionModule,
+    NgbModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     ReactiveFormsModule,
@@ -59,7 +60,8 @@ import {MapsAPILoader} from '@agm/core';
     MatDividerModule,
     MatTooltipModule,
     MatToolbarModule,
-    NgbModule,
+    MatButtonModule,
+    MatExpansionModule,
     MatCardModule,
     MatRippleModule,],
   declarations: [
