@@ -1,6 +1,12 @@
-    <mat-toolbar>
-      <h3>{{ (store | async)?.name }}</h3>
-    </mat-toolbar>
+
+    <div class="cover">
+      <img src="{{(store | async)?.cover.fullPath}}" />
+      <div class="title">
+        <mat-toolbar>
+          <h3>{{ (store | async)?.name }}</h3>
+        </mat-toolbar>
+      </div>
+    </div>
     <div class="row">
       <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
         <mat-card>

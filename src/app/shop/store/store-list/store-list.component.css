@@ -9,7 +9,9 @@
   overflow:hidden;
   
 }
-
+.mat-card-actions{
+  padding:0px 16px;
+}
 agm-map {
   margin-top:-100px;
   height: 200px;

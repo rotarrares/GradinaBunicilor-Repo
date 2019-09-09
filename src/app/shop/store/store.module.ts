@@ -10,9 +10,12 @@ import { StoreListComponent} from './store-list/store-list.component';
 import { StoreDetailsComponent} from './store-details/store-details.component';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { environment } from "../../../environments/environment";
+
 import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { FormsModule } from '@angular/forms';
 import { AuthComponent } from './auth/auth.component';
@@ -59,6 +62,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     NgbModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
+    AngularFireStorageModule,
     FontAwesomeModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
