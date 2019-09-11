@@ -19,6 +19,7 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
 
 import {StoreModule} from './shop/store/store.module';
+import { UserService } from './shop/shared/user.service';
 
 @NgModule({
   imports: [
@@ -47,7 +48,7 @@ import {StoreModule} from './shop/store/store.module';
     ShippingComponent,
   ],
   bootstrap: [ AppComponent ],
-  providers: [CartService]
+  providers: [CartService, UserService]
 })
 export class AppModule { }
 

@@ -30,9 +30,11 @@ export class AuthComponent implements OnInit {
   googleLogin() {
     this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
   }
+
   logout() {
     this.afAuth.auth.signOut();
   }
+  
   open(content) {
     this.modal = this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'});
     if(this.modal){

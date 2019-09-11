@@ -10,6 +10,7 @@ import { StoreListComponent} from './store-list/store-list.component';
 import { StoreDetailsComponent} from './store-details/store-details.component';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { environment } from "../../../environments/environment";
+import { UserService } from "../shared/user.service"
 
 import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
@@ -82,6 +83,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AuthComponent
     ],
   exports: [RouterModule],
-  providers: [StoreService,AngularFireAuth],
+  providers: [StoreService,
+  AngularFireAuth,
+  UserService],
 })
 export class StoreModule{};

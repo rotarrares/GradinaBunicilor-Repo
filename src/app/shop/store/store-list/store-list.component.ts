@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StoreService } from '../../shared/store.service'
-import { Store} from '../../../models/store';
+import { Store} from '../../models/store';
 import { Observable } from 'rxjs';
 import { AgmCoreModule } from '@agm/core';
 

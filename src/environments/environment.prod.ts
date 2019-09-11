@@ -5,7 +5,7 @@ export const environment = {
   authDomain: "gradinabunicilor-8be84.firebaseapp.com",
   databaseURL: "https://gradinabunicilor-8be84.firebaseio.com",
   projectId: "gradinabunicilor-8be84",
-  storageBucket: "",
+  storageBucket: "gs://gradinabunicilor-8be84.appspot.com/",
   messagingSenderId: "906584171893",
   appId: "1:906584171893:web:05013b07d8a6c5fc"
   }
