@@ -1,5 +1,5 @@
-export class UserDetails {
-  public email: string;
-  public role: string;
-  public storeId: string;
+export interface UserDetails {
+  email: string;
+  role: string;
+  storeId: string;
 }

@@ -11,6 +11,7 @@ import { StoreDetailsComponent} from './store-details/store-details.component';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { environment } from "../../../environments/environment";
 import { UserService } from "../shared/user.service"
+import { UserDetails } from '../models/user-details';
 
 import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule } from "@angular/fire/firestore";

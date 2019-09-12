@@ -11,8 +11,8 @@ export class StoreService {
   ngOnInit(){
   }
   getStores() { 
-      return this.firestore.collection<Store>("stores").snapshotChanges();
-    }
+    return this.firestore.collection<Store>("stores").snapshotChanges();
+  }
   
   getStore(path: string) {
     return this.firestore.doc("stores/" + path).valueChanges();
