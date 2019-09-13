@@ -17,6 +17,8 @@ export class StoreService {
   getStore(path: string) {
     return this.firestore.doc("stores/" + path).valueChanges();
   }
+
+  
   
   addStore(store: Store){
     return new Promise<any>((resolve, reject) =>{

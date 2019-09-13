@@ -16,7 +16,7 @@
         </mat-card>
       </div>
       <div class="col-lg-8 col-md-6 col-sm-12 col-xs-12">
-        Produse
+        <app-product-list [products]="(store | async)?.products"></app-product-list>
         <div *ngIf="canEdit()">
           verified Condition
         </div>

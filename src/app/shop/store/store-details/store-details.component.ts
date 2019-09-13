@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {StoreService} from '../../shared/store.service';
 import {UserService} from '../../shared/user.service';
-
 @Component({
   selector: 'app-store-details',
   templateUrl: './store-details.component.html',
@@ -24,11 +23,12 @@ export class StoreDetailsComponent implements OnInit {
       this.id = params.get('shopId');  
     });
     this.store = this.storeService.getStore(this.id);
+
   }
+  
 
   canEdit(){
-    
-    return this.userService.checkRole("producator") && this.userService.checkStoreId(this.id);
+    return (this.userService.checkRole("producator") && this.userService.checkStoreId(this.id));
   }
 
 }

@@ -2,7 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { Routes} from '@angular/router';
+
 import { StoreService } from '../shared/store.service';
+import { ProductService } from '../shared/product.service';
+import { UserService } from "../shared/user.service"
+
 import { ReactiveFormsModule } from '@angular/forms';
 import { StoreComponent} from './store.component';
 import { RouterModule } from '@angular/router';
@@ -10,7 +14,6 @@ import { StoreListComponent} from './store-list/store-list.component';
 import { StoreDetailsComponent} from './store-details/store-details.component';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { environment } from "../../../environments/environment";
-import { UserService } from "../shared/user.service"
 import { UserDetails } from '../models/user-details';
 
 import { AngularFireModule } from "@angular/fire";
@@ -37,6 +40,8 @@ import {MapsAPILoader} from '@agm/core';
 
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ProductListComponent } from './product-list/product-list.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
  const routes: Routes = [{
     path: 'shop',
@@ -81,11 +86,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     StoreComponent,
     StoreListComponent,
     StoreDetailsComponent,
-    AuthComponent
+    AuthComponent,
+    ProductListComponent,
+    ProductDetailsComponent
     ],
   exports: [RouterModule],
   providers: [StoreService,
   AngularFireAuth,
-  UserService],
+  UserService,
+  ProductService],
 })
 export class StoreModule{};

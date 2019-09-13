@@ -36,11 +36,13 @@ export class AuthComponent implements OnInit {
    this.userService.facebookLogin();
  }
 
+ logout(){
+   this.userService.logout();
+ }
+
   open(content) {
     this.modal = this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'});
-    if(this.modal){
-      console.log(this.modal);
-    }
+    
   }
 
   ngOnInit() {

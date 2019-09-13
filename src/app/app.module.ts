@@ -20,6 +20,7 @@ import { AngularFirestoreModule } from "@angular/fire/firestore";
 
 import {StoreModule} from './shop/store/store.module';
 import { UserService } from './shop/shared/user.service';
+import { ProductService } from './shop/shared/product.service';
 
 @NgModule({
   imports: [
@@ -48,7 +49,7 @@ import { UserService } from './shop/shared/user.service';
     ShippingComponent,
   ],
   bootstrap: [ AppComponent ],
-  providers: [CartService, UserService]
+  providers: [CartService, UserService, ProductService]
 })
 export class AppModule { }
 

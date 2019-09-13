@@ -33,15 +33,24 @@ export class UserService {
   }
 
   getEmail(){
-    return this.user.id;
+    if(this.user)
+    return this.user.email;
+    else return null;
+
   }
 
   checkRole(role:string){
-    return role === this.user.id;
+    if(this.user)
+    return role === this.user.role;
+    else return false;
   }
 
   checkStoreId(id:string){
-    return id === this.user.id;
+    if(this.user)
+    {
+    return id === this.user.storeid;
+    }
+    else return false;
   }
 
   private _getData(path: string) {
