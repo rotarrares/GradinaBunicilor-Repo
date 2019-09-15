@@ -21,7 +21,6 @@ export class AuthComponent implements OnInit {
   ) {
     this.afAuth.auth.onAuthStateChanged(function(user) {
     if (user) {
-      console.log("User Authentificated");
       modalService: NgbModal;
       modalService.dismissAll();
 

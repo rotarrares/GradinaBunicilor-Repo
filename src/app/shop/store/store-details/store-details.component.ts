@@ -2,13 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {StoreService} from '../../shared/store.service';
 import {UserService} from '../../shared/user.service';
+import { Observable } from 'rxjs';
+import { Store} from '../../models/store';
 @Component({
   selector: 'app-store-details',
   templateUrl: './store-details.component.html',
   styleUrls: ['./store-details.component.css']
 })
 export class StoreDetailsComponent implements OnInit {
-  store ;
+  store:Observable<Store> ;
   id:string;
   constructor(
     private route:ActivatedRoute,

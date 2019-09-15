@@ -9,16 +9,14 @@
         </mat-toolbar>
     </div>
     <div class="row">
-      <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+      <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
         <mat-card>
           
           {{ (store | async)?.details }}
         </mat-card>
       </div>
-      <div class="col-lg-8 col-md-6 col-sm-12 col-xs-12">
-        <app-product-list [products]="(store | async)?.products"></app-product-list>
-        <div *ngIf="canEdit()">
-          verified Condition
-        </div>
+      <div class="col-lg-9 col-md-6 col-sm-12 col-xs-12">
+        <app-product-list [store]="store" [canEdit]="canEdit()"></app-product-list>
+        
       </div>
     </div>

@@ -1,0 +1,6 @@
+<mat-card>
+  <div class="image-container">
+    <img mat-card-image src="{{(product | async)?.image}}"/>
+  </div>
+  <mat-card-title>{{(product |async)?.name}}</mat-card-title>
+</mat-card>

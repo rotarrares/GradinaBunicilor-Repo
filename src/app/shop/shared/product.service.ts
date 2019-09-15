@@ -8,6 +8,6 @@ export class ProductService {
 
 
   getProduct(ref:string){
-    return this.firestore.doc(ref).valueChanges();
+    return this.firestore.doc("products/" + ref).valueChanges();
   }
 }

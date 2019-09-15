@@ -15,7 +15,7 @@ export class StoreService {
   }
   
   getStore(path: string) {
-    return this.firestore.doc("stores/" + path).valueChanges();
+    return this.firestore.doc<Store>("stores/" + path).valueChanges();
   }
 
   
