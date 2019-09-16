@@ -42,6 +42,7 @@ import {MapsAPILoader} from '@agm/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { ProductEditComponent } from './product-edit/product-edit.component';
 
  const routes: Routes = [{
     path: 'shop',
@@ -88,7 +89,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     StoreDetailsComponent,
     AuthComponent,
     ProductListComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    ProductEditComponent
     ],
   exports: [RouterModule],
   providers: [StoreService,

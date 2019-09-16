@@ -1,5 +1,8 @@
 export class Product {
   id: string;
-  name:string;
+  disponibil:number;
   ferma:string;
+  image:string;
+  name:string;
+  species:string;
 }
