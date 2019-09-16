@@ -2,5 +2,9 @@
   <div class="image-container">
     <img mat-card-image src="{{(product | async)?.image}}"/>
   </div>
-  <mat-card-title>{{(product |async)?.name}}</mat-card-title>
+  
+  <mat-card-content>
+    <mat-card-title><h4>{{(product | async)?.name}}</h4></mat-card-title>
+    <mat-card-subtitle> <span>Soiul:</span>{{(product | async)?.species }}</mat-card-subtitle>
+  </mat-card-content>
 </mat-card>
