@@ -16,21 +16,16 @@ export class ProductListComponent implements OnInit {
   @Input() store: string;
   @Input() canEdit:boolean;
   productList: any;
-  products: [];
+  products: [] = [];
   constructor(
     private productService:ProductService,) { 
     }
     
   ngOnInit() {
+    console.log(this.store);
     this.productService.getStoreProducts(this.store).subscribe(products => {
       this.products = products;
     });    
-  }
-  
-  updateProduct() {
-    this.productService.updateProduct(this.editingProduct);
-    this.editingProduct = {} as Product;
-    this.editing = false;
   }
 
 }
