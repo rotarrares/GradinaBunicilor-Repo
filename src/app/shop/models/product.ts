@@ -1,8 +1,10 @@
 export class Product {
   id: string;
-  disponibil:number;
-  ferma:string;
+  available:number;
   image:string;
+  measureUnit: string;
   name:string;
+  price:number;
   species:string;
+  storeId:string;
 }
