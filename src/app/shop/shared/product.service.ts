@@ -26,6 +26,18 @@ export class ProductService {
     return this.products;
   }
 
+  getStoreProducts(store:string){
+    this.productsCollection = this.db.collection('products', ref => ref.where('storeId', "==", store));
+    this.products = this.productsCollection.snapshotChanges().pipe(map(actions => {
+    return actions.map(a => {
+      const data = a.payload.doc.data() as Product;
+      data.id = a.payload.doc.id;
+        return data;
+    });
+  }));
+    return this.products;
+  }
+
   addProduct(product: Product) {
     this.productsCollection.add(product);
   }
