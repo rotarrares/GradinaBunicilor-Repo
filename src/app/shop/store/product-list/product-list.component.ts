@@ -13,7 +13,7 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  @Input() store: Observable<Store>;
+  @Input() store: string;
   @Input() canEdit:boolean;
   productList: any;
   products: [];
@@ -22,7 +22,7 @@ export class ProductListComponent implements OnInit {
     }
     
   ngOnInit() {
-    this.productService.getProducts().subscribe(products => {
+    this.productService.getStoreProducts(this.store).subscribe(products => {
       this.products = products;
     });    
   }
