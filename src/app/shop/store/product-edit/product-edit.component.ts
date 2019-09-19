@@ -1,8 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Product } from '../../models/product';
+import { ProductService } from '../../shared/product.service'
+import { MAT_DIALOG_DATA,MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-product-edit',
@@ -10,11 +12,19 @@ import { Product } from '../../models/product';
   styleUrls: ['./product-edit.component.css']
 })
 export class ProductEditComponent implements OnInit {
- product: Product = new Product();
-  constructor() { }
+  @Input() storeId: string ;
+  product = {} as Product;
+
+  constructor(private productService:ProductService,
+  @Inject(MAT_DIALOG_DATA) public data: any ) { }
 
   ngOnInit() {
 
+  }
+  addProduct(){
+    this.product.storeId = this.storeId;
+    this.productService.addProduct(this.product);
+    this.product = {} as Product;
   }
 
 }

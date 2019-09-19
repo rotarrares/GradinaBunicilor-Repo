@@ -1,15 +1,29 @@
+<div mat-dialog-content>
 <form (ngSubmit)="addProduct()">
   <mat-form-field>
-    <input matInput type="text" name="name" [(ngModel)]="product.name" placeholder="Denumire"> 
+    <input matInput type="text" name="name" [(ngModel)]="product.name" placeholder="Denumire"/> 
   </mat-form-field>
   <mat-form-field>
-    <input matNativeControl type="text" name="description" [(ngModel)]="product.image" placeholder="poza"> 
+    <input matInput type="text" name="dimage" [(ngModel)]="product.image" placeholder="poza"/> 
   </mat-form-field>
-  <mat-form-field>
-    <input matNativeControl type="number" name="price" [(ngModel)]="product.price" step="1"
-    placeholder="pret"> 
+  <mat-form-field class="col-lg-6">
+    <input matInput type="number" name="available" [(ngModel)]="product.available" step="1" placeholder="cantitate disponibila"/> 
   </mat-form-field>
+  <mat-form-field class="col-lg-6">
+    <mat-select name="measureUnit" [(ngModel)]="product.measureUnit" placeholder="unitate de masura"> 
+      <mat-option value="Kilograme">Kilograme</mat-option>
+      <mat-option value="Litri"> Litri</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="col-lg-6">
+    <input matInput type="number" name="price" [(ngModel)]="product.price" step="0.5" placeholder="Pret in Lei pe unitate"/>
+  </mat-form-field>
+  <mat-form-field class="col-lg-12">
+    <input matInput type="text" name="species" [(ngModel)]="product.species"  placeholder="Specia"/>
+  </mat-form-field>
+  
   <button type="submit">
     Save
   </button>
 </form>
+</div>

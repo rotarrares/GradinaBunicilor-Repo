@@ -35,6 +35,10 @@ import { MatAccordion} from '@angular/material';
 import { MatCardModule} from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material';
+import { MatFormFieldModule } from '@angular/material';
+import { MatSelectModule} from '@angular/material';
+import { MatDialogModule,MatDialogRef} from '@angular/material/dialog';
+
 
 import { AgmCoreModule } from '@agm/core';
 import {MapsAPILoader} from '@agm/core';
@@ -76,6 +80,7 @@ import { ProductEditComponent } from './product-edit/product-edit.component';
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
 
+    MatDialogModule,
     MatIconModule,
     MatDividerModule,
     MatTooltipModule,
@@ -85,6 +90,7 @@ import { ProductEditComponent } from './product-edit/product-edit.component';
     MatCardModule,
     MatRippleModule,
     MatInputModule,
+    MatSelectModule,
     ],
   declarations: [
     TopBarComponent,
@@ -100,6 +106,7 @@ import { ProductEditComponent } from './product-edit/product-edit.component';
   providers: [StoreService,
   AngularFireAuth,
   UserService,
-  ProductService],
+  ProductService,
+	 {provide: MatDialogRef, useValue: {}}],
 })
 export class StoreModule{};
