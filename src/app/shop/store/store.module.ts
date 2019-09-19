@@ -33,7 +33,8 @@ import { MatExpansionModule} from '@angular/material/expansion';
 import { MatButtonModule} from '@angular/material/button'
 import { MatAccordion} from '@angular/material';
 import { MatCardModule} from '@angular/material/card';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material';
 
 import { AgmCoreModule } from '@agm/core';
 import {MapsAPILoader} from '@agm/core';
@@ -74,6 +75,7 @@ import { ProductEditComponent } from './product-edit/product-edit.component';
     FontAwesomeModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
+
     MatIconModule,
     MatDividerModule,
     MatTooltipModule,
@@ -81,7 +83,9 @@ import { ProductEditComponent } from './product-edit/product-edit.component';
     MatButtonModule,
     MatExpansionModule,
     MatCardModule,
-    MatRippleModule,],
+    MatRippleModule,
+    MatInputModule,
+    ],
   declarations: [
     TopBarComponent,
     StoreComponent,

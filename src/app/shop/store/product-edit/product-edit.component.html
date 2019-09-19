@@ -1,10 +1,14 @@
 <form (ngSubmit)="addProduct()">
-  
-  <input type="text" name="name" [(ngModel)]="product.name" placeholder="Denumire"> 
-  <input type="text" name="description" [(ngModel)]="product.image" placeholder="poza"> 
-  <input type="number" name="price" [(ngModel)]="product.price" step="1"
-  placeholder="pret"> 
-  
+  <mat-form-field>
+    <input matInput type="text" name="name" [(ngModel)]="product.name" placeholder="Denumire"> 
+  </mat-form-field>
+  <mat-form-field>
+    <input matNativeControl type="text" name="description" [(ngModel)]="product.image" placeholder="poza"> 
+  </mat-form-field>
+  <mat-form-field>
+    <input matNativeControl type="number" name="price" [(ngModel)]="product.price" step="1"
+    placeholder="pret"> 
+  </mat-form-field>
   <button type="submit">
     Save
   </button>
