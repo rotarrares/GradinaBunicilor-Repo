@@ -17,13 +17,14 @@ export class ProductListComponent implements OnInit {
   @Input() store: string;
   @Input() canEdit:boolean;
   productList: any;
-  products: Product[] = [];
+  products: Product[];
   constructor(
     private productService:ProductService,) { 
+     
     }
     
   ngOnInit() {
-    this.productService.getStoreProducts(this.store).subscribe(products => {
+     this.productService.getStoreProducts(this.store).subscribe((products) => {
       this.products = products;
     });    
   }

@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 
 @Injectable()
 export class ProductService {
-  
+
   productsCollection: AngularFirestoreCollection<Product>;
   products: Observable<Product[]>;
   productDoc: AngularFirestoreDocument<Product>;
@@ -28,8 +28,8 @@ export class ProductService {
     return this.products;
   }
 
-  getStoreProducts(store:string){
-    this.productsCollection = this.db.collection('products', ref => ref.where('storeId', "==", store));
+  getStoreProducts(storeId:string){
+    this.productsCollection = this.db.collection('products', ref => ref.where('storeId', "==", storeId));
     this.products = this.productsCollection.snapshotChanges().pipe(map(actions => {
     return actions.map(a => {
       const data = a.payload.doc.data() as Product;

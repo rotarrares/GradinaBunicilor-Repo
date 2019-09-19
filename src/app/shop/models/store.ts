@@ -8,6 +8,5 @@ export class Store {
   image: string;
   name: string;
   rating: number;
-  products:string[];
   location : firebase.firestore.GeoPoint;
 }

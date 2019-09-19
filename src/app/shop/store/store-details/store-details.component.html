@@ -5,7 +5,7 @@
     </div>
     <div class="title">
         <mat-toolbar>
-          <h3>{{ store.name }}</h3>
+          <h3>{{store.name}}</h3>
         </mat-toolbar>
     </div>
     <div class="row">
@@ -13,7 +13,7 @@
         <mat-card>
           {{ store.details }}
         </mat-card>
-        <mat-card *ngIf="store.cetrification">
+        <mat-card *ngIf="store.certification">
           <mat-card-title> Certificare Ecologica </mat-card-title>
           <img mat-card-image src="https://www.greenqueen.ro/media//wysiwyg/certificate/certificari-badge.png" />
         </mat-card>
@@ -24,8 +24,8 @@
           </mat-card-content>
         </mat-card>
       </div>
-      <div class="col-lg-9 col-md-6 col-sm-12 col-xs-12">
-        <app-product-list *ngIf="store.id" [store]="store.id" [canEdit]="canEdit()"></app-product-list>
+      <div *ngIf="id" class="col-lg-9 col-md-6 col-sm-12 col-xs-12">
+        <app-product-list [store]="id" [canEdit]="canEdit()"></app-product-list>
         
       </div>
     </div>

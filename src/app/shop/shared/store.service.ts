@@ -10,6 +10,7 @@ export class StoreService {
   stores: Observable<Store[]>;
   storeDoc: AngularFirestoreDocument<Store>;
   currentStore: Observable<Store>;
+
   constructor(private firestore: AngularFirestore) { 
     console.log("Constructing Store service");
   this.storeCollection = this.firestore.collection('stores');
@@ -24,6 +25,14 @@ export class StoreService {
   
 
   getStores() { 
+    this.storeCollection = this.firestore.collection('stores');
+    this.stores = this.storeCollection.snapshotChanges().pipe(map(actions => {
+    return actions.map(a => {
+      const data = a.payload.doc.data() as Store;
+      data.id = a.payload.doc.id;
+        return data;
+    });
+  }));
     return this.stores;
   }
   

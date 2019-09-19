@@ -1,4 +1,4 @@
-<div *ngIf="products.length > 0" class="row">
+<div *ngIf="products" class="row">
   <div *ngFor="let product of products" class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
     <app-product-details [product]="product" [canEdit]="canEdit"></app-product-details>
   </div>
