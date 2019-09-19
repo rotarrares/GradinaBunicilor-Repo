@@ -10,7 +10,7 @@ import { Product } from '../../models/product';
   styleUrls: ['./product-edit.component.css']
 })
 export class ProductEditComponent implements OnInit {
-@Input() product: Observable<Product>;
+ product: Product = new Product();
   constructor() { }
 
   ngOnInit() {
