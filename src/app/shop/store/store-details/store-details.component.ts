@@ -10,22 +10,22 @@ import { Store} from '../../models/store';
   styleUrls: ['./store-details.component.css']
 })
 export class StoreDetailsComponent implements OnInit {
-  store:Observable<Store> ;
+  store:Store ;
   id:string;
   constructor(
     private route:ActivatedRoute,
     private storeService:StoreService,
     private userService:UserService,
   ) { 
-    
-  }
-
-  ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.id = params.get('shopId');  
     });
-    this.store = this.storeService.getStore(this.id);
+    this.storeService.getStore(this.id).subscribe(
+    res => (this.store = res));
+  }
 
+  ngOnInit() {
+    
   }
   
 

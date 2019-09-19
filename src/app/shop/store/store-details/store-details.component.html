@@ -1,19 +1,19 @@
-
+<div *ngIf="store">
     <div class="cover">
-      <img src="{{(store | async)?.cover}}" />
+      <img src="{{store.cover}}" />
       
     </div>
     <div class="title">
         <mat-toolbar>
-          <h3>{{ (store | async)?.name }}</h3>
+          <h3>{{ store.name }}</h3>
         </mat-toolbar>
     </div>
     <div class="row">
       <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
         <mat-card>
-          {{ (store | async)?.details }}
+          {{ store.details }}
         </mat-card>
-        <mat-card *ngIf="(store | async)?.certificare">
+        <mat-card *ngIf="store.cetrification">
           <mat-card-title> Certificare Ecologica </mat-card-title>
           <img mat-card-image src="https://www.greenqueen.ro/media//wysiwyg/certificate/certificari-badge.png" />
         </mat-card>
@@ -25,7 +25,8 @@
         </mat-card>
       </div>
       <div class="col-lg-9 col-md-6 col-sm-12 col-xs-12">
-        <app-product-list *ngIf="(store | async)?.id" [store]="(store | async)?.id" [canEdit]="canEdit()"></app-product-list>
+        <app-product-list *ngIf="store.id" [store]="store.id" [canEdit]="canEdit()"></app-product-list>
         
       </div>
     </div>
+</div>

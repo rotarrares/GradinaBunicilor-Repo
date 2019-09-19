@@ -6,12 +6,12 @@ import { map } from 'rxjs/operators';
 
 @Injectable()
 export class ProductService {
+  
   productsCollection: AngularFirestoreCollection<Product>;
   products: Observable<Product[]>;
   productDoc: AngularFirestoreDocument<Product>;
 
   constructor(public db: AngularFirestore) {
-  // this.products = this.db.collection('products').valueChanges();
   this.productsCollection = this.db.collection('products');
   this.products = this.productsCollection.snapshotChanges().pipe(map(actions => {
     return actions.map(a => {
@@ -21,6 +21,8 @@ export class ProductService {
     });
   }));
   }
+
+  
 
   getProducts() {
     return this.products;

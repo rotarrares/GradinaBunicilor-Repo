@@ -8,7 +8,7 @@ import { Product } from '../../models/product';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent implements OnInit {
-@Input() product: Observable<Product>;
+@Input() product: Product;
 @Input() canEdit:boolean;
   constructor() { }
 

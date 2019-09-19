@@ -1,17 +1,17 @@
 
     <mat-toolbar><h3> Producatori </h3></mat-toolbar>    
-    <div class="row">
+    <div *ngIf="stores.length > 0" class="row">
         <div class="card-container col-lg-4 col-md-6 col-sm-12 col-xs-12" *ngFor="let store of stores; let i = index " [attr.data-index]="i" >
             
-              <mat-card class="card"  [attr.data-index]="store.payload.doc.id" (mouseleave)="closePanel()"(mouseenter)="openPanel(i)">
+              <mat-card class="card"  [attr.data-index]="store.id" (mouseleave)="closePanel()"(mouseenter)="openPanel(i)">
                 
-                <a matRipple [routerLink]="['/shop', store.payload.doc.id]">
+                <a matRipple [routerLink]="['/shop', store.id]">
                   <div class="image-container">
-                    <img mat-card-image src="{{store.payload.doc.data().image}}"  />
+                    <img mat-card-image src="{{store.image}}"  />
                   </div>
                   <mat-card-title >
                     
-                    <h4 class="text-center"> {{(store.payload.doc.data().name)}}</h4>
+                    <h4 class="text-center"> {{(store.name)}}</h4>
                   </mat-card-title>     
                 </a>
                   <mat-card-subtitle>
@@ -26,8 +26,8 @@
                           </mat-panel-description>
                         
                         </mat-expansion-panel-header>
-                        <a matRipple [routerLink]="['/shop', store.payload.doc.id]">
-                        <p>{{store.payload.doc.data().details}}</p>
+                        <a matRipple [routerLink]="['/shop', store.id]">
+                        <p>{{store.details}}</p>
                         </a>
                       </mat-expansion-panel>
                       
@@ -37,19 +37,19 @@
                             Locatie
                           </mat-panel-title>
                           <mat-panel-description>
-                            {{store.payload.doc.data().address}}
+                            {{store.address}}
                           </mat-panel-description>
                         </mat-expansion-panel-header>
                         <ng-template matExpansionPanelContent>
                           <agm-map 
-                          [latitude]=store.payload.doc.data().location.latitude 
-                          [longitude]=store.payload.doc.data().location.longitude
+                          [latitude]=store.location.latitude 
+                          [longitude]=store.location.longitude
                           [mapTypeControl]="true"
                           [controlSize]="23"
                           [zoom]="11">
                             <agm-marker 
-                            [latitude]=store.payload.doc.data().location.latitude 
-                            [longitude]=store.payload.doc.data().location.longitude>
+                            [latitude]=store.location.latitude 
+                            [longitude]=store.location.longitude>
                             <agm-info-window>
                               <strong>Fa-ne o vizita!</strong>
                             </agm-info-window>
@@ -70,7 +70,7 @@
                   </span>
                 </ng-template>
                 <mat-card-actions>
-                  <ngb-rating matTooltip="{{store.payload.doc.data().rating}}" [(rate)]="store.payload.doc.data().rating" aria-label="store.payload.doc.data().rating" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
+                  <ngb-rating matTooltip="{{store.rating}}" [(rate)]="store.rating" aria-label="store.rating" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
                 </mat-card-actions>
               </mat-card>
             

@@ -11,16 +11,20 @@ import { AgmCoreModule } from '@agm/core';
   styleUrls: ['./store-list.component.css']
 })
 export class StoreListComponent implements OnInit {
-  stores;
+  stores : Store[] = [];
 
   indexExpanded = -1;
   constructor(private storeService: StoreService) { 
+    this.getStores();
+    console.log("Constructed StoreList");
    }
 
   ngOnInit() {
-    this.getStores();
-
+    
+    console.log("Initiated StoreList");
+    console.log(this.stores);
   }
+
   openPanel(index: number) {
     if(this.indexExpanded != index)
     this.indexExpanded = index;
