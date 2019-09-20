@@ -9,4 +9,5 @@ export class Store {
   name: string;
   rating: number;
   location : firebase.firestore.GeoPoint;
+  phone:string;
 }

@@ -1,11 +1,18 @@
 <mat-card>
   <div class="image-container">
-    <button mat-icon-button color="primary" class="example-icon" aria-hidden="false" ><mat-icon>delete</mat-icon></button>
+      <mat-chip-list >
+        <mat-chip (mouseover)="hideText=true" (mouseout)="hideText=false" class="delete" color="accent" >
+          <span *ngIf="hideText">Sterge</span>
+          <button  mat-icon-button (click)="delete()" aria-hidden="false">
+            <mat-icon color="warn">delete</mat-icon>
+          </button>
+        </mat-chip>
+      </mat-chip-list>
     <img mat-card-image src="{{product.image}}"/>
   </div>
-  
   <mat-card-content>
     <mat-card-title><h4>{{product.name}}</h4></mat-card-title>
-    <mat-card-subtitle> <span>Soiul:</span>{{product.species }}</mat-card-subtitle>
+    <p> <span>Soiul:</span>{{product.species }}</p>
+    <p><span>Disponibil:</span>{{product.available}} {{product.measureUnit}}</p>
   </mat-card-content>
 </mat-card>

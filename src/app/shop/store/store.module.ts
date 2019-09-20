@@ -37,6 +37,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material';
 import { MatFormFieldModule } from '@angular/material';
 import { MatBadgeModule} from '@angular/material/badge';
+import { MatChipsModule} from '@angular/material/chips';
 import { MatSelectModule} from '@angular/material';
 import { MatDialogModule,MatDialogRef} from '@angular/material/dialog';
 
@@ -81,6 +82,7 @@ import { ProductEditComponent } from './product-edit/product-edit.component';
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
 
+    MatChipsModule,
     MatDialogModule,
     MatIconModule,
     MatDividerModule,
@@ -92,6 +94,7 @@ import { ProductEditComponent } from './product-edit/product-edit.component';
     MatRippleModule,
     MatInputModule,
     MatSelectModule,
+    MatBadgeModule,
     ],
   declarations: [
     TopBarComponent,

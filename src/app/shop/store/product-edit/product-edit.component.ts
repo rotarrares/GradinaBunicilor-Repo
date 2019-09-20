@@ -21,8 +21,11 @@ export class ProductEditComponent implements OnInit {
   ngOnInit() {
 
   }
+
+  
+
   addProduct(){
-    this.product.storeId = this.storeId;
+    this.product.storeId = this.data.storeId;
     this.productService.addProduct(this.product);
     this.product = {} as Product;
   }

@@ -50,7 +50,6 @@ export class ProductListComponent implements OnInit {
 
   openDialog(storeId): void {
     const dialogRef = this.dialog.open(ProductEditComponent, {
-      
       data: {storeId:storeId}
     });
 

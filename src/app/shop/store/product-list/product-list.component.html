@@ -2,14 +2,14 @@
   <div *ngFor="let product of products" class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
     <app-product-details [product]="product" [canEdit]="canEdit()"></app-product-details>
   </div>
-  <div *ngIf="isUserLoggedIn">
-    <div *ngIf="canEdit()" class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+  <div *ngIf="isUserLoggedIn"  class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+    <div *ngIf="canEdit()">
       <mat-card class="text-center">
         <div class="image-container">
           <img mat-card-image src="https://img2.bcracing-na.com/prodimage/ProductImage/800/b54424cd-d430-42da-9a89-2adc10549e2a.jpg"/>
         </div>
         <mat-card-content>
-          <button mat-raised-button (click)="openDialog(storeId)">Adauga Produs</button>
+          <button mat-raised-button (click)="openDialog(store)">Adauga Produs</button>
 
         </mat-card-content>
       </mat-card>
