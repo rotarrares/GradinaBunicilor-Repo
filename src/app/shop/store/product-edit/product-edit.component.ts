@@ -15,14 +15,17 @@ export class ProductEditComponent implements OnInit {
   @Input() storeId: string ;
   product = {} as Product;
 
-  constructor(private productService:ProductService,
+  constructor(public dialogRef: MatDialogRef<ProductEditComponent>,
+    private productService:ProductService,
   @Inject(MAT_DIALOG_DATA) public data: any ) { }
 
   ngOnInit() {
 
   }
 
-  
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
 
   addProduct(){
     this.product.storeId = this.data.storeId;

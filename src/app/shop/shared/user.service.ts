@@ -16,9 +16,9 @@ export class UserService {
   public isUserLoggedIn: BehaviorSubject<boolean>;
   constructor(private fireAuth: AngularFireAuth,
    private firestore:AngularFirestore) {
-     if (this.fireAuth.auth.currentUser){
-      this.isUserLoggedIn = new BehaviorSubject<boolean>(true);
-      }
+     
+    this.isUserLoggedIn = new BehaviorSubject<boolean>(true);
+    
      this.updateUser();
    }
 
