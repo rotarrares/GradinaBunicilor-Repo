@@ -6,6 +6,7 @@ import { MatButtonModule} from '@angular/material/button';
 import { UserService } from '../../shared/user.service';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
+
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
@@ -19,12 +20,12 @@ export class AuthComponent implements OnInit {
   private afAuth: AngularFireAuth,
   private userService: UserService,
   ) {
-    this.afAuth.auth.onAuthStateChanged(function(user) {
-    if (user) {
-      modalService: NgbModal;
-      modalService.dismissAll();
-
-    }
+      this.afAuth.auth.onAuthStateChanged(function(user) {
+      if(user) {
+        modalService: NgbModal;
+        modalService.dismissAll();
+        
+      }
     });
   }
  googleLogin(){

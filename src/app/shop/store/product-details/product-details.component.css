@@ -13,3 +13,9 @@
 .mat-card-content{
   padding:20px;
 }
+
+.mat-icon-button{
+  position:absolute;
+  top:0px;
+  right:5px;
+}

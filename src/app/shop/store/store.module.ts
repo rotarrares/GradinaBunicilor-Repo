@@ -36,6 +36,7 @@ import { MatCardModule} from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material';
 import { MatFormFieldModule } from '@angular/material';
+import { MatBadgeModule} from '@angular/material/badge';
 import { MatSelectModule} from '@angular/material';
 import { MatDialogModule,MatDialogRef} from '@angular/material/dialog';
 
@@ -100,9 +101,15 @@ import { ProductEditComponent } from './product-edit/product-edit.component';
     AuthComponent,
     ProductListComponent,
     ProductDetailsComponent,
-    ProductEditComponent
+    ProductEditComponent,
     ],
+  
   exports: [RouterModule],
+
+  entryComponents: [
+    ProductEditComponent
+  ],
+
   providers: [StoreService,
   AngularFireAuth,
   UserService,
