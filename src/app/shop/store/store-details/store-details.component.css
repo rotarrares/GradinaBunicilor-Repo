@@ -13,5 +13,17 @@
 }
 
 .mat-card{
-  margin-bottom:16px;
+  margin-bottom:20px;
+}
+
+.certified-image{
+  max-height:300px;
+  overflow:hidden;
+}
+
+.certified{
+  width:70px;
+  position:absolute;
+  bottom:-20px;
+  right:-5px;
 }
