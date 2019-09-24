@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, ViewChild} from '@angular/core';
 import { StoreService } from '../../shared/store.service'
 import { Store} from '../../models/store';
 import { Observable } from 'rxjs';
@@ -11,14 +11,14 @@ import { AgmCoreModule } from '@agm/core';
   styleUrls: ['./store-list.component.css']
 })
 export class StoreListComponent implements OnInit {
+  
   stores : Store[];
   indexExpanded = -1;
-
+ 
   constructor(private storeService: StoreService) { 
     this.storeService.getStores().subscribe((stores) => 
     {this.stores = stores});
    }
-
   ngOnInit() {
   }
 

@@ -26,11 +26,6 @@ hideText:boolean = false;
   ngOnInit() {
   }
 
-  ngOnChanges(){
-    if (this.canEdit) {
-      
-    }
-  }
 
   delete(){
     this.productService.deleteProduct(this.product);

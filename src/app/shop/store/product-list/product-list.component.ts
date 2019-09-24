@@ -25,8 +25,8 @@ export interface DialogData {
 export class ProductListComponent implements OnInit {
   @Input() store: string;
   productList: any;
-  products: Product[];
-  userCanEdit:boolean;
+  products: Product[] = [];
+  userCanEdit:boolean = false;
   isUserLoggedIn:boolean;
 
   constructor(
@@ -44,7 +44,11 @@ export class ProductListComponent implements OnInit {
       this.products = products;
     });    
   }
-  
+
+  ngAfterViewInit(){
+    
+  }
+
   canEdit(){
     this.userCanEdit = (this.userService.checkRole("producator") && this.userService.checkStoreId(this.store));
     return this.userCanEdit;

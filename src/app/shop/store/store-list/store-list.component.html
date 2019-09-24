@@ -4,26 +4,29 @@
         
         <div class="card-container col-lg-4 col-md-6 col-sm-12 col-xs-12" *ngFor="let store of stores; let i = index " [attr.data-index]="i" >
             
-              <mat-card class="card"  [attr.data-index]="store.id" (mouseleave)="closePanel()"(mouseenter)="openPanel(i)">
-                
+              <mat-card class="card"  [attr.data-index]="store.id" ><!--(mouseenter)="openPanel(i)"-->
+                <img *ngIf="store.certification"class="certified" src="https://www.greenqueen.ro/media//wysiwyg/certificate/certificari-badge.png" />
                 <a matRipple [routerLink]="['/shop', store.id]">
                   <div class="image-container">
                     <img mat-card-image src="{{store.image}}"  />
+                    
                   </div>
+                  
                   <mat-card-title >
                     
                     <h4 class="text-center"> {{(store.name)}}</h4>
                   </mat-card-title>     
                 </a>
+                
                   <mat-card-subtitle>
                     <mat-accordion>
-                      <mat-expansion-panel [expanded]="i == indexExpanded">
+                      <mat-expansion-panel (opened)="indexExpanded = i" (closed)="indexExpanded = -1"><!--[expanded]="i == indexExpanded"-->
                         <mat-expansion-panel-header>
                           <mat-panel-title>
                             Detalii
                           </mat-panel-title>
-                          <mat-panel-description>
-                            
+                          <mat-panel-description *ngIf="!(indexExpanded==i)">
+                            {{store.details | slice : 0:30}}..
                           </mat-panel-description>
                         
                         </mat-expansion-panel-header>
