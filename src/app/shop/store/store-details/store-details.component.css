@@ -19,6 +19,7 @@
 .certified-image{
   max-height:300px;
   overflow:hidden;
+  z-index:99;
 }
 
 .certified{

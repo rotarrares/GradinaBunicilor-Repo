@@ -26,6 +26,7 @@ export class ProductListComponent implements OnInit {
   @Input() store: string;
   productList: any;
   products: Product[];
+  userCanEdit:boolean;
   isUserLoggedIn:boolean;
 
   constructor(
@@ -45,7 +46,8 @@ export class ProductListComponent implements OnInit {
   }
   
   canEdit(){
-    return (this.userService.checkRole("producator") && this.userService.checkStoreId(this.store));
+    this.userCanEdit = (this.userService.checkRole("producator") && this.userService.checkStoreId(this.store));
+    return this.userCanEdit;
   }
 
   openDialog(storeId): void {

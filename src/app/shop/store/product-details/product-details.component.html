@@ -1,6 +1,8 @@
 <mat-card>
+  
   <div class="image-container">
-      <mat-chip-list >
+    <div *ngIf="isUserLoggedIn">
+      <mat-chip-list *ngIf="canEdit">
         <mat-chip (mouseover)="hideText=true" (mouseout)="hideText=false" class="delete" color="accent" >
           <span *ngIf="hideText">Sterge</span>
           <button  mat-icon-button (click)="delete()" aria-hidden="false">
@@ -8,6 +10,7 @@
           </button>
         </mat-chip>
       </mat-chip-list>
+    </div>
     <img mat-card-image src="{{product.image}}"/>
   </div>
   <mat-card-content>

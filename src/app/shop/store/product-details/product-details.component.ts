@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Product } from '../../models/product';
 import { ProductService } from '../../shared/product.service'
+import {UserService} from '../../shared/user.service';
+
 
 @Component({
   selector: 'app-product-details',
@@ -11,10 +13,23 @@ import { ProductService } from '../../shared/product.service'
 export class ProductDetailsComponent implements OnInit {
 @Input() product: Product;
 @Input() canEdit:boolean;
+isUserLoggedIn:boolean;
 hideText:boolean = false;
-  constructor(private productService:ProductService,) { }
+  constructor(private productService:ProductService,
+  private userService:UserService,
+    ) { 
+      this.userService.isUserLoggedIn.subscribe( value => {
+            this.isUserLoggedIn = value;
+        });
+    }
 
   ngOnInit() {
+  }
+
+  ngOnChanges(){
+    if (this.canEdit) {
+      
+    }
   }
 
   delete(){
